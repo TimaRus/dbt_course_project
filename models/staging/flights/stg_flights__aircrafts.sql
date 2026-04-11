@@ -3,6 +3,7 @@
     materialized = 'table',
     )
 }}
+
 SELECT
     aircraft_code,
     model,

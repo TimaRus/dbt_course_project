@@ -1,6 +1,6 @@
 {{
   config(
-    materialized = 'table',
+    materialized = 'table'
     )
 }}
 
@@ -9,4 +9,4 @@ SELECT
   book_date,
   total_amount
 FROM
-  {{ source('demo_src', 'bookings') }}
+    {{ ref('stg_flights__bookings') }}

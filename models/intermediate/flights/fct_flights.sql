@@ -12,4 +12,4 @@ SELECT
   departure_airport,
   arrival_airport
 FROM
-  {{ source('demo_src', 'flights') }}
+    {{ ref('stg_flights__flights') }}

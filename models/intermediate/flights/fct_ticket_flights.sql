@@ -7,7 +7,7 @@
 SELECT
   ticket_no,
   flight_id,
-  boarding_no,
-  seat_no
+  fare_conditions,
+  amount
 FROM
-  {{ source('demo_src', 'boarding_passes') }}
+    {{ ref('stg_flights__ticket_flights') }}
