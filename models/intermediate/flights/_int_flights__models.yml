@@ -1,0 +1,59 @@
+models:
+  - name: fct_bookings
+    description: Факты бронирований
+    docs:
+      show: true
+      node_color: red
+    latest_version: 1
+    versions:
+      - v: 1
+    config:
+      contract: {enforced: true}
+    meta:
+      owner: "owner@gmail.com"
+      contact_tg: "owner"
+    columns:
+      - name: book_ref
+        data_type: varchar(8)
+        constraints:
+          - type: not_null
+          - type: check
+            expression: "total_amount > 0"
+        tests:
+          - not_null
+        meta:
+          owner: "finance"
+      - name: book_date
+        data_type: timestamptz
+      - name: total_amount
+        data_type: numeric(10, 2)
+  - name: fct_flights
+    description: any_model
+  - name: fct_ticket_flights
+    description: Билеты
+    docs:
+      show: true
+      node_color: green
+    latest_version: 1
+    versions:
+      - v: 1
+    config:
+      contract: {enforced: true}
+    meta:
+      owner: "owner@gmail.com"
+    columns:
+      - name: ticket_no
+        data_type: bpchar(13)
+        constraints:
+          - type: not_null
+      - name: flight_id
+        data_type: int4
+      - name: fare_conditions
+        data_type: varchar(10)
+      - name: amount
+        data_type: numeric(10, 2)
+        constraints:
+         - type: check
+           expression: "amount > 0"
+  - name: fct_tickets
+    description: any_model
