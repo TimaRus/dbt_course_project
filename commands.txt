@@ -1,0 +1,6 @@
+dbt docs generate # сделать документацию
+dbt docs serve # открыть сайт с документацией
+dbt source freshness # запустить проверки
+dbt build --select stg_flights__bookings --log-level debug # очень подробные логи по конкретной модели
+dbt build --select fct_ticket_flights --log-level debug
+dbt build --select stg_flights__bookings --full-refresh # полностью обновить модель, нужно для MV в Postgres

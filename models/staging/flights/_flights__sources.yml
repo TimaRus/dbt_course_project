@@ -40,7 +40,7 @@ sources:
         columns:
         - name: book_ref
         - name: book_date
-        - name: total_ammount
+        - name: total_amount
         freshness:
           warn_after:
             count: 6
