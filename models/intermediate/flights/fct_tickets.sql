@@ -12,3 +12,4 @@ SELECT
   contact_data
 FROM
     {{ ref('stg_flights__tickets') }}
+WHERE passenger_id NOT IN (SELECT employee_id FROM {{ ref('company_employees') }})
