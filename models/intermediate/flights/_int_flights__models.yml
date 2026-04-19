@@ -9,9 +9,9 @@ models:
       - v: 1
     config:
       contract: {enforced: true}
-    meta:
-      owner: "owner@gmail.com"
-      contact_tg: "owner"
+      meta:
+        owner: "owner_yml"
+        status: "in_dev"
     columns:
       - name: book_ref
         data_type: varchar(8)
