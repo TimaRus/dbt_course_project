@@ -1,10 +1,7 @@
 {{
   config(
-    materialized = 'table',
-    meta = {
-      'owner': 'owner_model'
-    }
-    )
+    materialized = 'table'
+  )
 }}
 
 SELECT
