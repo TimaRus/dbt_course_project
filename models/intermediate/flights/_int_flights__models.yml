@@ -27,6 +27,8 @@ models:
         data_type: timestamptz
       - name: total_amount
         data_type: numeric(10, 2)
+      - name: md5
+        data_type: string
   - name: fct_flights
     description: Факты перелетов
     tests:
