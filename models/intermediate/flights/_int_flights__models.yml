@@ -28,7 +28,10 @@ models:
       - name: total_amount
         data_type: numeric(10, 2)
   - name: fct_flights
-    description: any_model
+    description: Факты перелетов
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('stg_flights__flights')
   - name: fct_ticket_flights
     description: Билеты
     docs:
